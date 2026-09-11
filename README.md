@@ -31,24 +31,24 @@ Trigger any entity's state change or any service call after a configurable delay
 
 1. Copy `custom_components/delayed_action` into your HA config folder:
 
-```
-<HA_CONFIG>/
-└── custom_components/
-    └── delayed_action/
-        ├── manifest.json
-        ├── __init__.py
-        ├── const.py
-        ├── config_flow.py
-        ├── services.py
-        ├── services.yaml
-        ├── timer.py
-        ├── strings.json
-        ├── translations/
-        └── www/
-            ├── delayed-action-panel.js
-            ├── delayed-action-card.js
-            └── delayed-action-card-editor.js
-```
+   ```text
+   <HA_CONFIG>/
+   └── custom_components/
+       └── delayed_action/
+           ├── manifest.json
+           ├── __init__.py
+           ├── const.py
+           ├── config_flow.py
+           ├── services.py
+           ├── services.yaml
+           ├── timer.py
+           ├── strings.json
+           ├── translations/
+           └── www/
+               ├── delayed-action-panel.js
+               ├── delayed-action-card.js
+               └── delayed-action-card-editor.js
+   ```
 
 2. Restart Home Assistant
 3. Clear your browser cache (`Cmd+Shift+R` / `Ctrl+F5`) so the new JS files load
@@ -128,7 +128,7 @@ compact: false
 ```
 
 | Option | Description | Required |
-|--------|-------------|----------|
+| ------ | ----------- | -------- |
 | `entity` | A `delayed_action.*` entity | Yes |
 | `name` | Display name (defaults to target entity name) | No |
 | `compact` | Compact layout | No |
@@ -138,7 +138,7 @@ compact: false
 ## Duration Formats
 
 | Format | Meaning |
-|--------|---------|
+| ------ | ------- |
 | `600` | 600 seconds |
 | `10m` | 10 minutes |
 | `1h30m` | 1 hour 30 minutes |
@@ -150,7 +150,7 @@ compact: false
 ## Entity Attributes
 
 | Attribute | Description |
-|-----------|-------------|
+| --------- | ----------- |
 | `status` | `idle` / `running` / `finished` / `cancelled` |
 | `remaining` | Remaining time (seconds) |
 | `duration` | Total duration (seconds) |
