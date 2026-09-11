@@ -39,7 +39,7 @@
   },
   "selector": {
     "action": {
-      "state": {
+      "options": {
         "turn_on": "Aç",
         "turn_off": "Kapat",
         "custom": "Özel servis"

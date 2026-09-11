@@ -9,6 +9,7 @@ from datetime import timedelta
 
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
+from homeassistant.helpers import config_validation as cv
 from homeassistant.helpers.entity_component import EntityComponent
 
 from .const import (
@@ -30,6 +31,8 @@ from .services import async_setup_services
 from .timer import DelayedActionSwitchEntity
 
 _LOGGER = logging.getLogger(__name__)
+
+CONFIG_SCHEMA = cv.config_entry_only_config_schema(DOMAIN)
 
 PANEL_TITLE = "Delayed Action"
 PANEL_ICON = "mdi:timer-settings-outline"

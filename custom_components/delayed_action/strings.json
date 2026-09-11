@@ -39,7 +39,7 @@
   },
   "selector": {
     "action": {
-      "state": {
+      "options": {
         "turn_on": "Turn on",
         "turn_off": "Turn off",
         "custom": "Custom service"

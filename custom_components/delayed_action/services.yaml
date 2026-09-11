@@ -33,7 +33,7 @@ run_later:
         entity_id; add entity_id yourself inside service_data.
       example: climate.set_temperature
       selector:
-        service:
+        text:
     service_data:
       name: Service data
       description: Extra parameters passed to the service.
