@@ -1,0 +1,59 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Add Delayed Action Timer",
+        "description": "Create a persistent timer that changes an entity's state or calls a service after a delay.",
+        "data": {
+          "name": "Timer name",
+          "target_entity": "Target entity",
+          "action": "Action",
+          "service": "Service (for custom action)",
+          "service_data": "Service data",
+          "delay_seconds": "Delay (seconds)"
+        }
+      }
+    },
+    "error": {
+      "service_or_entity_required": "Either service or target entity is required"
+    },
+    "abort": {
+      "already_configured": "A timer with this name already exists"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Delayed Action Settings",
+        "description": "Edit timer settings.",
+        "data": {
+          "name": "Timer name",
+          "target_entity": "Target entity",
+          "action": "Action",
+          "service": "Service (for custom action)",
+          "service_data": "Service data",
+          "delay_seconds": "Delay (seconds)"
+        }
+      }
+    }
+  },
+  "selector": {
+    "action": {
+      "state": {
+        "turn_on": "Turn on",
+        "turn_off": "Turn off",
+        "custom": "Custom service"
+      }
+    }
+  },
+  "services": {
+    "run_later": {
+      "name": "Run later",
+      "description": "Change an entity's state or call a service after a delay."
+    },
+    "cancel": {
+      "name": "Cancel",
+      "description": "Cancel a running delayed action timer."
+    }
+  }
+}

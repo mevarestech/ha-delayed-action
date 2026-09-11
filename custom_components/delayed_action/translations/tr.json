@@ -1,0 +1,59 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Delayed Action Zamanlayıcı Ekle",
+        "description": "Belirli bir süre sonra bir entity'nin durumunu değiştirecek veya bir service çağıracak kalıcı zamanlayıcı oluştur.",
+        "data": {
+          "name": "Zamanlayıcı adı",
+          "target_entity": "Hedef entity",
+          "action": "Aksiyon",
+          "service": "Service (custom aksiyon için)",
+          "service_data": "Service data",
+          "delay_seconds": "Gecikme (saniye)"
+        }
+      }
+    },
+    "error": {
+      "service_or_entity_required": "Service veya hedef entity gerekli"
+    },
+    "abort": {
+      "already_configured": "Bu isimde bir zamanlayıcı zaten var"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Delayed Action Ayarları",
+        "description": "Zamanlayıcı ayarlarını düzenle.",
+        "data": {
+          "name": "Zamanlayıcı adı",
+          "target_entity": "Hedef entity",
+          "action": "Aksiyon",
+          "service": "Service (custom aksiyon için)",
+          "service_data": "Service data",
+          "delay_seconds": "Gecikme (saniye)"
+        }
+      }
+    }
+  },
+  "selector": {
+    "action": {
+      "state": {
+        "turn_on": "Aç",
+        "turn_off": "Kapat",
+        "custom": "Özel servis"
+      }
+    }
+  },
+  "services": {
+    "run_later": {
+      "name": "Run later",
+      "description": "Belirli bir süre sonra bir entity'nin durumunu değiştir veya service çağır."
+    },
+    "cancel": {
+      "name": "Cancel",
+      "description": "Çalışan bir delayed action zamanlayıcıyı iptal et."
+    }
+  }
+}

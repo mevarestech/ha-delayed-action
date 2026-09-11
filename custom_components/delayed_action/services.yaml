@@ -1,0 +1,77 @@
+run_later:
+  name: Run later
+  description: >
+    Change any entity's state or call any service after a delay. Creates and
+    starts a new timer (delayed_action entity). The remaining time is visible
+    in the entity attributes.
+  fields:
+    entity_id:
+      name: Target entity
+      description: >
+        The entity whose state will be changed. When given, `action`
+        (turn_on/turn_off) automatically derives the domain. Alternatively
+        use `service`.
+      example: light.living_room
+      selector:
+        entity:
+    action:
+      name: Action
+      description: >
+        Which action to perform when entity_id is given. If `custom` is
+        selected, the `service` field is used.
+      example: turn_off
+      selector:
+        select:
+          options:
+            - turn_on
+            - turn_off
+            - custom
+    service:
+      name: Service
+      description: >
+        Service to call (e.g. climate.set_temperature). Use this instead of
+        entity_id; add entity_id yourself inside service_data.
+      example: climate.set_temperature
+      selector:
+        service:
+    service_data:
+      name: Service data
+      description: Extra parameters passed to the service.
+      example:
+        temperature: 22
+      selector:
+        object:
+    delay:
+      name: Delay
+      description: >
+        How long until the action runs. Can be given as seconds (600),
+        string (10m, 1h30m, 00:10:00) or dict {hours, minutes, seconds}.
+      example: 600
+      selector:
+        text:
+    name:
+      name: Timer name
+      description: Display name for the created delayed_action entity.
+      example: Turn off living room light in 10 min
+      selector:
+        text:
+
+cancel:
+  name: Cancel
+  description: >
+    Cancel a running delayed action timer. The target can be given via
+    timer_id or entity_id.
+  fields:
+    timer_id:
+      name: Timer ID
+      description: The timer_id returned by the run_later service.
+      example: a1b2c3d4e5f6
+      selector:
+        text:
+    entity_id:
+      name: Entity ID
+      description: The entity_id of the delayed_action entity to cancel.
+      example: delayed_action.a1b2c3d4e5f6
+      selector:
+        entity:
+          domain: delayed_action
